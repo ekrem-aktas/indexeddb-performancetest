@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSQL vs IndexedDB Performance Comparison</title>
+</head>
+<body>
+    <header>
+        <h2>WebSQL vs IndexedDB Performance Comparison</h2>
+        <h4>WebSQL Supported: <span class="support-label websql"></span></h4>
+        <h4>IndexedDB Supported: <span class="support-label indexeddb"></span></h4>
+    </header>
+    <main>
+        <section id="result-template" style="display: none">
+            <h4 class="title">100 objects, inserting and querying</h4>
+            <div class="result-table">
+                <div>
+                    <span class="result-title">Time to insert 100 objects:</span>
+                    <span class="result-value">-</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script type="module" src="src/index.js"></script>
+</body>
+</html>

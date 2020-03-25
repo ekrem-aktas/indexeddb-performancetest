@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c69d516-0bc8-49e3-bfaf-a59bb02e8847" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZX7XVosaeTPr7nJY8VzjOjzN9D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\w\research\websqlvsindexeddb\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c69d516-0bc8-49e3-bfaf-a59bb02e8847" name="Default Changelist" comment="" />
+      <created>1584973624848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584973624848</updated>
+      <workItem from="1584973626151" duration="9715000" />
+      <workItem from="1585041607038" duration="23552000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="709" y="296" key="FileChooserDialogImpl" timestamp="1585141850246">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="709" y="296" key="FileChooserDialogImpl/-2560.255.2498.1440/0.0.1858.1080@0.0.1858.1080" timestamp="1585141850246" />
+    <state x="585" y="250" key="run.anything.popup" timestamp="1585069139196">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="585" y="250" key="run.anything.popup/-2560.255.2498.1440/0.0.1858.1080@0.0.1858.1080" timestamp="1585069139196" />
+    <state x="592" y="235" width="672" height="160" key="search.everywhere.popup" timestamp="1585141771684">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="592" y="235" width="672" height="160" key="search.everywhere.popup/-2560.255.2498.1440/0.0.1858.1080@0.0.1858.1080" timestamp="1585141771684" />
+  </component>
+</project>
