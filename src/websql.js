@@ -1,7 +1,7 @@
-import { measure, report } from "./util.js";
+import { measure } from "./util.js";
 
 export function isWebSQLSupported() {
-    return "openDatabase" in window;
+    return !!window.openDatabase;
 }
 
 let db = undefined;
@@ -30,32 +30,6 @@ export async function runTestWithWebSQL(testCase) {
         }
     }
 }
-//
-// export async function testWebSQL() {
-//     const executeSqlMultipleAndMeasure = measure(executeSqlMultiple);
-//     const executeSqlWithMeasure = measure(executeSql);
-//     for (const testCase of getTestCases()) {
-//         switch (testCase.type) {
-//             case "table": {
-//                 await executeSql(db, `create table if not exists ${testCase.name} (${testCase.columns.map(col => `${col} text`).join(",")})`, []);
-//                 break;
-//             }
-//             case "insert": {
-//                 const { time, result } = await executeSqlMultipleAndMeasure(db, generateInsertStatements(testCase.table, testCase.data));
-//                 report("WebSql", testCase, time, result);
-//                 break;
-//             }
-//             case "query": {
-//                 const { time, result } = await executeSqlWithMeasure(db, ...generateSelectStatement(testCase.table, testCase.filter));
-//                 report("WebSql", testCase, time, result.rows.length);
-//                 break;
-//             }
-//             case "clean": {
-//                 await executeSql(db, `delete from ${testCase.table}`, []);
-//             }
-//         }
-//     }
-// }
 
 function generateInsertStatements(table, objs) {
     return objs.map(obj => {
