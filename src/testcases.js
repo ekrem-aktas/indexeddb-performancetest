@@ -1,78 +1,58 @@
 
 export const VALUES = ["Green", "Red", "Blue", "Yellow", "Black"];
 
-export function * getTestCases() {
-    // 1 column
-    const tableWithOneColumn = "Table1Col";
-    const generateObjWith1Column = i => ({ col: VALUES[i % VALUES.length] });
-    yield createTable(tableWithOneColumn, "col");
-    // 100x1col
-    yield insert(tableWithOneColumn, generateObjects(100, generateObjWith1Column));
-    yield query(tableWithOneColumn, [["col", VALUES[0]]]);
-    yield cleanTable(tableWithOneColumn);
-    // 1000x1col
-    yield insert(tableWithOneColumn, generateObjects(1000, generateObjWith1Column));
-    yield query(tableWithOneColumn, [["col", VALUES[0]]]);
-    yield cleanTable(tableWithOneColumn);
-    // 10Kx1col
-    yield insert(tableWithOneColumn, generateObjects(10000, generateObjWith1Column));
-    yield query(tableWithOneColumn, [["col", VALUES[0]]]);
-    yield cleanTable(tableWithOneColumn);
-    // 20Kx1col
-    yield insert(tableWithOneColumn, generateObjects(20000, generateObjWith1Column));
-    yield query(tableWithOneColumn, [["col", VALUES[0]]]);
-    yield cleanTable(tableWithOneColumn);
 
-    // 2 columns
-    const tableWith2Columns = "Table2Cols";
-    const generateObjWith2Columns = i => ({ col1: VALUES[i % VALUES.length], col2: i.toString()});
-    yield createTable(tableWith2Columns, "col1", "col2");
-    // 100x2cols
-    yield insert(tableWith2Columns, generateObjects(100, generateObjWith2Columns));
-    yield query(tableWith2Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith2Columns);
-    // 1Kx2cols
-    yield insert(tableWith2Columns, generateObjects(1000, generateObjWith2Columns));
-    yield query(tableWith2Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith2Columns);
-    // 10Kx2cols
-    yield insert(tableWith2Columns, generateObjects(10000, generateObjWith2Columns));
-    yield query(tableWith2Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith2Columns);
-    // 20Kx2cols
-    yield insert(tableWith2Columns, generateObjects(20000, generateObjWith2Columns));
-    yield query(tableWith2Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith2Columns);
-
-    // 5 columns
-    const tableWith5Columns = "Table5Cols";
-    const generateObjWith5Columns = i => ({
-        col1: VALUES[i % VALUES.length],
-        col2: i.toString(),
-        col3: "Test Test " + i.toString(),
-        col4: i % 2 === true,
-        col5: new Date().getTime() + i
-    });
-    yield createTable(tableWith5Columns, "col1", "col2", "col3", "col4", "col5")
-    // 100x5cols
-    yield insert(tableWith5Columns, generateObjects(100, generateObjWith5Columns));
-    yield query(tableWith5Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith5Columns);
-    // 1Kx5cols
-    yield insert(tableWith5Columns, generateObjects(1000, generateObjWith5Columns));
-    yield query(tableWith5Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith5Columns);
-    // 10Kx5cols
-    yield insert(tableWith5Columns, generateObjects(10000, generateObjWith5Columns));
-    yield query(tableWith5Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith5Columns);
-    // 20Kx5cols
-    yield insert(tableWith5Columns, generateObjects(20000, generateObjWith5Columns));
-    yield query(tableWith5Columns, [["col1", VALUES[0]]]);
-    yield cleanTable(tableWith5Columns);
+function * generateTestsFor(columnNumber) {
+    const tableName = `Table${columnNumber}Columns`;
+    yield createTable(tableName, getColumns(columnNumber));
+    // 1K
+    yield insert(tableName, generateObjects(1000, createObj(columnNumber)));
+    yield query(tableName, [["col0", VALUES[0]]]);
+    yield query(tableName, [["guid", "123"]]);
+    yield cleanTable(tableName);
+    // 10K
+    yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
+    yield query(tableName, [["col0", VALUES[0]]]);
+    yield query(tableName, [["guid", "123"]]);
+    yield cleanTable(tableName);
+    // 50K
+    yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
+    yield query(tableName, [["col0", VALUES[0]]]);
+    yield query(tableName, [["guid", "123"]]);
+    yield cleanTable(tableName);
 }
 
-function createTable(name, ...columns) {
+export function * getTestCases() {
+    for (const testCase of generateTestsFor(5))
+        yield testCase;
+    for (const testCase of generateTestsFor(10))
+        yield testCase;
+    for (const testCase of generateTestsFor(15))
+        yield testCase;
+    for (const testCase of generateTestsFor(20))
+        yield testCase;
+}
+
+function createObj(cols) {
+    return r => {
+        const obj = {};
+        obj.guid = r.toString();
+        for (let i = 0; i < cols; i++) {
+            obj[`col${i}`] = VALUES[(i + r) % VALUES.length]
+        }
+        return obj;
+    }
+}
+
+function getColumns(number) {
+    const cols = ["guid"];
+    for (let i = 0; i < number; i++) {
+        cols.push("col" + i);
+    }
+    return cols;
+}
+
+function createTable(name, columns) {
     return { type: "table", name, columns };
 }
 
