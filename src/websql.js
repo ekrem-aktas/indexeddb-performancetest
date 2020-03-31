@@ -41,7 +41,7 @@ function generateInsertStatements(table, objs) {
 }
 
 function generateSelectStatement(table, filter) {
-    return [`select * from ${table} where ${filter.map(f => `${f[0]}=? `).join(" and ")}`, filter.map(f => f[1])];
+    return [`select * from ${table} where ${filter.map(f => `${f[0]}=? `).join(" or ")}`, filter.map(f => f[1])];
 }
 
 function executeSql(db, statement, args) {

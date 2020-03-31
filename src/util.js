@@ -10,10 +10,10 @@ export function measure(asyncFunc) {
 export function report(engine, testCase, time, result) {
     switch (testCase.type) {
         case "insert":
-            console.log(`${engine.toUpperCase()}: Inserting ${testCase.data.length} objects to ${testCase.table} took ${time}ms`);
+            console.log(`${engine.toUpperCase()}: ${testCase.table}: insert ${testCase.data.length} rows. Time ${time}`);
             break;
         case "query":
-            console.log(`${engine.toUpperCase()}: Querying table ${testCase.table} took ${time}ms to return ${result} rows`);
+            console.log(`${engine.toUpperCase()}: ${testCase.table}: query returning ${result} rows with filter ${JSON.stringify(testCase.filter)} Time ${time}`);
             break;
     }
 }
@@ -21,9 +21,9 @@ export function report(engine, testCase, time, result) {
 export function describeTestCase(testCase) {
     switch (testCase.type) {
         case "insert":
-            return `Insert ${testCase.data.length} rows to ${testCase.table} table`;
+            return `${testCase.table}: Insert ${testCase.data.length} rows`;
         case "query":
-            return `Query ${testCase.table} with filters ${JSON.stringify(testCase.filter)}`;
+            return `${testCase.table}: Query with filters ${JSON.stringify(testCase.filter)}`;
         default:
             return undefined;
     }

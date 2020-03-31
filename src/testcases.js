@@ -7,18 +7,22 @@ function * generateTestsFor(columnNumber) {
     yield createTable(tableName, getColumns(columnNumber));
     // 1K
     yield insert(tableName, generateObjects(1000, createObj(columnNumber)));
-    yield query(tableName, [["col0", VALUES[0]]]);
-    yield query(tableName, [["guid", "123"]]);
+    if (columnNumber === 5) {
+        yield query(tableName, [["col0", VALUES[0]]]);
+        yield query(tableName, [["col2", VALUES[1]], ["col4", VALUES[2]]]);
+        yield query(tableName, [["guid", "500"]]);
+    }
     yield cleanTable(tableName);
     // 10K
     yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
-    yield query(tableName, [["col0", VALUES[0]]]);
-    yield query(tableName, [["guid", "123"]]);
     yield cleanTable(tableName);
     // 50K
     yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
-    yield query(tableName, [["col0", VALUES[0]]]);
-    yield query(tableName, [["guid", "123"]]);
+    if (columnNumber === 20) {
+        yield query(tableName, [["col0", VALUES[0]]]);
+        yield query(tableName, [["col2", VALUES[1]], ["col6", VALUES[2]]]);
+        yield query(tableName, [["guid", "25000"]]);
+    }
     yield cleanTable(tableName);
 }
 

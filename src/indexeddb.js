@@ -12,7 +12,7 @@ export async function runTestWithIndexedDB(testCase) {
     }
 
     const insertWithMeasure = measure(insertObjects);
-    const queryWithMeasure = measure((table, filter) => db[table].where(filter).toArray());
+    const queryWithMeasure = measure(builder => builder.toArray());
 
     switch (testCase.type) {
         case "table": {
@@ -27,8 +27,16 @@ export async function runTestWithIndexedDB(testCase) {
             return await insertWithMeasure(db, testCase.table, testCase.data);
         }
         case "query": {
-            const filter = Object.assign({}, ...testCase.filter.map(([col, value]) => ({ [col]: value })));
-            return await queryWithMeasure(testCase.table, filter);
+            let builder;
+            testCase.filter.forEach(([col, value]) => {
+                if (builder === undefined) {
+                    builder = db[testCase.table].where(col).equalsIgnoreCase(value);
+                } else {
+                    builder = builder.or(col).equalsIgnoreCase(value);
+                }
+            });
+            // const filter = Object.assign({}, ...testCase.filter.map(([col, value]) => ({ [col]: value })));
+            return await queryWithMeasure(builder);
         }
         case "clean": {
             await db[testCase.table].where("id").above(0).delete();

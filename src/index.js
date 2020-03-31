@@ -17,7 +17,7 @@ import {describeTestCase, report} from "./util.js";
             const testRun = await runTestWithWebSQL(testCase);
             if (testRun && testRun.time) {
                 results.push(roundToTwo(testRun.time));
-                report("WebSQL", testCase, testRun.time, testRun.result && testRun.result.rows ? testRun.result.rows.length : undefined);
+                report("WebSQL   ", testCase, roundToTwo(testRun.time), testRun.result && testRun.result.rows ? testRun.result.rows.length : undefined);
             }
         } else {
             results.push(-1)
@@ -27,7 +27,7 @@ import {describeTestCase, report} from "./util.js";
             const testRun = await runTestWithIndexedDB(testCase);
             if (testRun && testRun.time) {
                 results.push(roundToTwo(testRun.time));
-                report("IndexedDB", testCase, testRun.time, testRun.result.length);
+                report("IndexedDB", testCase, roundToTwo(testRun.time), testRun.result.length);
             }
         } else {
             results.push(-1)
@@ -47,6 +47,7 @@ import {describeTestCase, report} from "./util.js";
 
     console.log("Test complete");
     console.table(resultTable);
+    console.log(resultTable);
 
     function roundToTwo(num) {
         return +(Math.round(num + "e+2")  + "e-2");
