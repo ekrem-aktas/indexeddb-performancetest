@@ -8,7 +8,7 @@ let db = undefined;
 
 export async function runTestWithIndexedDB(testCase) {
     if (db === undefined) {
-        db = new Dexie('TestDatabase');
+        db = new Dexie(getRandomDBName());
     }
 
     const insertWithMeasure = measure(insertObjects);
@@ -16,8 +16,7 @@ export async function runTestWithIndexedDB(testCase) {
 
     switch (testCase.type) {
         case "table": {
-            await db.delete();
-            db = new Dexie("TestDatabase");
+            db = new Dexie(getRandomDBName());
             db.version(1).stores({
                 [testCase.name]: "++id, " + testCase.columns.join(", ")
             });
@@ -42,6 +41,10 @@ export async function runTestWithIndexedDB(testCase) {
             break;
         }
     }
+}
+
+function getRandomDBName() {
+    return "TestDatabase" + Math.round(Math.random() * 1000000);
 }
 
 function insertObjects(db, table, objs) {
