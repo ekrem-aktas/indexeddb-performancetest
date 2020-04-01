@@ -1,4 +1,4 @@
-import {measure, report} from "./util.js";
+import {measure} from "./util.js";
 
 export function isIndexedDBSupported() {
     return "indexedDB" in window;
@@ -27,7 +27,7 @@ export async function runTestWithIndexedDB(testCase) {
             return await insertWithMeasure(db, testCase.table, testCase.data);
         }
         case "query": {
-            let builder;
+            let builder = undefined;
             testCase.filter.forEach(([col, value]) => {
                 if (builder === undefined) {
                     builder = db[testCase.table].where(col).equalsIgnoreCase(value);
@@ -35,7 +35,6 @@ export async function runTestWithIndexedDB(testCase) {
                     builder = builder.or(col).equalsIgnoreCase(value);
                 }
             });
-            // const filter = Object.assign({}, ...testCase.filter.map(([col, value]) => ({ [col]: value })));
             return await queryWithMeasure(builder);
         }
         case "clean": {
