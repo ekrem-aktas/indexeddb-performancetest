@@ -49,6 +49,8 @@ import {describeTestCase, report} from "./util.js";
     console.log("Test complete, send the next log back to Ekrem");
     console.log(JSON.stringify({ agent: navigator.userAgent, results: resultTable }));
 
+    document.getElementById("result").innerText = JSON.stringify({ agent: navigator.userAgent, results: resultTable });
+
     function roundToTwo(num) {
         return +(Math.round(num + "e+2")  + "e-2");
     }
