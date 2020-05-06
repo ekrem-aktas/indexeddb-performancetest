@@ -29,9 +29,9 @@ export async function runTestWithIndexedDB(testCase) {
             break;
         }
         case "insert": {
-            log("INDEXEDDB: Inserting...");
+            log("INDEXEDDB: Inserting " + testCase.data.length + " objects to " + testCase.table + "...");
             const result = await insertWithMeasure(db, testCase.table, testCase.data);
-            log("INDEXEDDB: Inserting...Done");
+            log("INDEXEDDB: Inserting " + testCase.data.length + " objects to " + testCase.table + "...Done");
             return result;
         }
         case "query": {
