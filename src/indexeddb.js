@@ -48,7 +48,7 @@ export async function runTestWithIndexedDB(testCase) {
         }
         case "clean": {
             log("INDEXEDDB: Clearing table...");
-            await db[testCase.table].where("id").above(0).delete();
+            await db[testCase.table].clear();
             log("INDEXEDDB: Clearing table...Done");
             break;
         }
