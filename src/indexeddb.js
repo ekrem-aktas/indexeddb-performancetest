@@ -1,4 +1,4 @@
-import {measure} from "./util.js";
+import {measure, log} from "./util.js";
 
 export function isIndexedDBSupported() {
     return "indexedDB" in window;
@@ -18,20 +18,20 @@ export async function runTestWithIndexedDB(testCase) {
     switch (testCase.type) {
         case "table": {
             version++;
-            console.log("INDEXEDDB: Upgrading to version " + version);
+            log("INDEXEDDB: Upgrading to version " + version);
             db.close();
             db.version(version).stores({
                 [testCase.name]: "++id, " + testCase.columns.join(", ")
             });
-            console.log("INDEXXEDDB: Opening database...");
+            log("INDEXXEDDB: Opening database...");
             await db.open();
-            console.log("INDEXXEDDB: Opening database...Done");
+            log("INDEXXEDDB: Opening database...Done");
             break;
         }
         case "insert": {
-            console.log("INDEXEDDB: Inserting...");
+            log("INDEXEDDB: Inserting...");
             const result = await insertWithMeasure(db, testCase.table, testCase.data);
-            console.log("INDEXEDDB: Inserting...Done");
+            log("INDEXEDDB: Inserting...Done");
             return result;
         }
         case "query": {
@@ -43,12 +43,13 @@ export async function runTestWithIndexedDB(testCase) {
                     builder = builder.or(col).equalsIgnoreCase(value);
                 }
             });
+            log("INDEXEDDB: Querying...");
             return await queryWithMeasure(builder);
         }
         case "clean": {
-            console.log("INDEXEDDB: Clearing table...");
+            log("INDEXEDDB: Clearing table...");
             await db[testCase.table].where("id").above(0).delete();
-            console.log("INDEXEDDB: Clearing table...Done");
+            log("INDEXEDDB: Clearing table...Done");
             break;
         }
     }

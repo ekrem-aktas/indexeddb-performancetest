@@ -18,7 +18,10 @@ export function report(engine, testCase, time, result) {
             text = `${engine.toUpperCase()}: ${testCase.table}: query returning ${result} rows with filter ${JSON.stringify(testCase.filter)} Time ${time}`
             break;
     }
+    log(text);
+}
 
+export function log(text) {
     if (text !== '') {
         document.getElementById("result").innerText = text;
         console.log(text);
