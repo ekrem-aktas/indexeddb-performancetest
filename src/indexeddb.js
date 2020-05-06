@@ -18,16 +18,21 @@ export async function runTestWithIndexedDB(testCase) {
     switch (testCase.type) {
         case "table": {
             version++;
+            console.log("INDEXEDDB: Upgrading to version " + version);
             db.close();
-            // db = new Dexie(getRandomDBName());
             db.version(version).stores({
                 [testCase.name]: "++id, " + testCase.columns.join(", ")
             });
+            console.log("INDEXXEDDB: Opening database...");
             await db.open();
+            console.log("INDEXXEDDB: Opening database...Done");
             break;
         }
         case "insert": {
-            return await insertWithMeasure(db, testCase.table, testCase.data);
+            console.log("INDEXEDDB: Inserting...");
+            const result = await insertWithMeasure(db, testCase.table, testCase.data);
+            console.log("INDEXEDDB: Inserting...Done");
+            return result;
         }
         case "query": {
             let builder = undefined;
@@ -41,7 +46,9 @@ export async function runTestWithIndexedDB(testCase) {
             return await queryWithMeasure(builder);
         }
         case "clean": {
+            console.log("INDEXEDDB: Clearing table...");
             await db[testCase.table].where("id").above(0).delete();
+            console.log("INDEXEDDB: Clearing table...Done");
             break;
         }
     }

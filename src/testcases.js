@@ -14,8 +14,8 @@ function * generateTestsFor(columnNumber) {
     }
     yield cleanTable(tableName);
     // 10K
-    // yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
-    // yield cleanTable(tableName);
+    yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
+    yield cleanTable(tableName);
     // 50K
     // yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
     // if (columnNumber === 20) {
