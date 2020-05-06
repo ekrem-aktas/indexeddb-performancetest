@@ -9,7 +9,8 @@ import {describeTestCase, report} from "./util.js";
 
     document.querySelector("#start").onclick = async () => {
         console.log("Starting test");
-
+        document.querySelector("#start").innerText = "Started...";
+        
         const resultTable = [["Test Case", "WebSQL (ms)", "IndexedDB (ms)", "Diff (ms)", "Percentage"]];
 
         for (const testCase of getTestCases()) {
