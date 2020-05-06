@@ -8,9 +8,22 @@ const runs = [
     // Ekrem
     {"agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",28.97,3618.32,3589.35,12489.89],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",5.87,1664.8,1658.93,28361.16],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",4.96,53.44,48.48,1077.42],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",3.77,1.72,-2.05,45.62],["Table5Columns: Insert 10000 rows",241.18,3378.67,3137.49,1400.89],["Table5Columns: Insert 50000 rows",927.06,12203.39,11276.33,1316.35],["Table10Columns: Insert 1000 rows",41.09,789.36,748.27,1921.05],["Table10Columns: Insert 10000 rows",305.71,3055.23,2749.52,999.39],["Table10Columns: Insert 50000 rows",1273.47,15632.21,14358.74,1227.53],["Table15Columns: Insert 1000 rows",47.12,859.5,812.38,1824.07],["Table15Columns: Insert 10000 rows",404.39,3754.86,3350.47,928.52],["Table15Columns: Insert 50000 rows",1646.29,21124.35,19478.06,1283.15],["Table20Columns: Insert 1000 rows",83.07,965.64,882.57,1162.44],["Table20Columns: Insert 10000 rows",545.94,5737.11,5191.17,1050.87],["Table20Columns: Insert 50000 rows",2616.58,26128.12,23511.54,998.56],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",181.95,3336.31,3154.36,1833.64],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",287.62,2707.9,2420.28,941.49],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",15.02,2.18,-12.84,14.51]]},
     {"agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,194],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,12],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,21],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,2],["Table5Columns: Insert 10000 rows",-1,1126],["Table5Columns: Insert 50000 rows",-1,5352],["Table10Columns: Insert 1000 rows",-1,184],["Table10Columns: Insert 10000 rows",-1,1353],["Table10Columns: Insert 50000 rows",-1,7084],["Table15Columns: Insert 1000 rows",-1,218],["Table15Columns: Insert 10000 rows",-1,1669],["Table15Columns: Insert 50000 rows",-1,8602],["Table20Columns: Insert 1000 rows",-1,238],["Table20Columns: Insert 10000 rows",-1,2141],["Table20Columns: Insert 50000 rows",-1,10847],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,471],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,586],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,1]]},
+    {"agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18362","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,295.5],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,78.7],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,77.4],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,4.3],["Table5Columns: Insert 10000 rows",-1,2784.7],["Table5Columns: Insert 50000 rows",-1,27694.7],["Table10Columns: Insert 1000 rows",-1,1524.6],["Table10Columns: Insert 10000 rows",-1,8037.7],["Table10Columns: Insert 50000 rows",-1,61371.4],["Table15Columns: Insert 1000 rows",-1,3759.9],["Table15Columns: Insert 10000 rows",-1,19864.5],["Table15Columns: Insert 50000 rows",-1,124508.7],["Table20Columns: Insert 1000 rows",-1,7790.3],["Table20Columns: Insert 10000 rows",-1,34658.1],["Table20Columns: Insert 50000 rows",-1,205034.8],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,12037.4],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,22073.1],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,22.9]]},
 
     // Mitya
-     {"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,399],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,43],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,32],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,3],["Table5Columns: Insert 10000 rows",-1,1998],["Table5Columns: Insert 50000 rows",-1,10499],["Table10Columns: Insert 1000 rows",-1,235],["Table10Columns: Insert 10000 rows",-1,2453],["Table10Columns: Insert 50000 rows",-1,12911],["Table15Columns: Insert 1000 rows",-1,362],["Table15Columns: Insert 10000 rows",-1,3492],["Table15Columns: Insert 50000 rows",-1,16490],["Table20Columns: Insert 1000 rows",-1,448],["Table20Columns: Insert 10000 rows",-1,4409],["Table20Columns: Insert 50000 rows",-1,20106],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,510],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,693],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,1]]}
+     {"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:74.0) Gecko/20100101 Firefox/74.0","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,399],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,43],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,32],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,3],["Table5Columns: Insert 10000 rows",-1,1998],["Table5Columns: Insert 50000 rows",-1,10499],["Table10Columns: Insert 1000 rows",-1,235],["Table10Columns: Insert 10000 rows",-1,2453],["Table10Columns: Insert 50000 rows",-1,12911],["Table15Columns: Insert 1000 rows",-1,362],["Table15Columns: Insert 10000 rows",-1,3492],["Table15Columns: Insert 50000 rows",-1,16490],["Table20Columns: Insert 1000 rows",-1,448],["Table20Columns: Insert 10000 rows",-1,4409],["Table20Columns: Insert 50000 rows",-1,20106],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,510],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,693],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,1]]},
+     // Mitya - Firefox Mobile
+     {"agent":"Mozilla/5.0 (Android 10; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,502],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,104],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,145],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,5],["Table5Columns: Insert 10000 rows",-1,3199],["Table5Columns: Insert 50000 rows",-1,18288],["Table10Columns: Insert 1000 rows",-1,950],["Table10Columns: Insert 10000 rows",-1,3838],["Table10Columns: Insert 50000 rows",-1,20167],["Table15Columns: Insert 1000 rows",-1,828],["Table15Columns: Insert 10000 rows",-1,4575],["Table15Columns: Insert 50000 rows",-1,23681],["Table20Columns: Insert 1000 rows",-1,982],["Table20Columns: Insert 10000 rows",-1,7048],["Table20Columns: Insert 50000 rows",-1,32372],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,23360],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,17961],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,5]]},
+     // Mitya - Chrome Mobile
+     {"agent":"Mozilla/5.0 (Linux; Android 10; SM-G960F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",75.3,575.9,500.6,764.81],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",38.1,252.1,214,661.68],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",72.3,644,571.7,890.73],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",30.9,13,-17.9,42.07],["Table5Columns: Insert 10000 rows",328.5,4659.8,4331.3,1418.51],["Table5Columns: Insert 50000 rows",1743.2,24657.2,22914,1414.48],["Table10Columns: Insert 1000 rows",110.2,1037.3,927.1,941.29],["Table10Columns: Insert 10000 rows",564.4,6966.9,6402.5,1234.39],["Table10Columns: Insert 50000 rows",2251.4,37219,34967.6,1653.15],["Table15Columns: Insert 1000 rows",116.5,2004.5,1888,1720.6],["Table15Columns: Insert 10000 rows",770.6,8540.7,7770.1,1108.32],["Table15Columns: Insert 50000 rows",2801.9,47447.5,44645.6,1693.4],["Table20Columns: Insert 1000 rows",130.9,3845.6,3714.7,2937.82],["Table20Columns: Insert 10000 rows",1002,10695.3,9693.3,1067.4],["Table20Columns: Insert 50000 rows",3563.7,61725.1,58161.4,1732.05],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",404.4,12153,11748.6,3005.19],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",803.3,10553.6,9750.3,1313.78],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",74.5,16.8,-57.7,22.55]]},
+     // Ekrem - Chrome Mobile 
+     {"agent":"Mozilla/5.0 (Linux; Android 9; SM-G950F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Mobile Safari/537.36","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",203.2,785.9,582.7,386.76],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",26.5,301.7,275.2,1138.49],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",22.7,385.5,362.8,1698.24],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",20.6,8.4,-12.2,40.78],["Table5Columns: Insert 10000 rows",518.7,4714.9,4196.2,908.98],["Table5Columns: Insert 50000 rows",2524.5,25898.9,23374.4,1025.9],["Table10Columns: Insert 1000 rows",105.4,1350.5,1245.1,1281.31],["Table10Columns: Insert 10000 rows",837.8,7262.6,6424.8,866.87],["Table10Columns: Insert 50000 rows",3792.3,51383.5,47591.2,1354.94],["Table15Columns: Insert 1000 rows",179.2,3512.7,3333.5,1960.21],["Table15Columns: Insert 10000 rows",1224.3,11187.9,9963.6,913.82],["Table15Columns: Insert 50000 rows",6378.2,80094.3,73716.1,1255.75],["Table20Columns: Insert 1000 rows",1029.1,7443.7,6414.6,723.32],["Table20Columns: Insert 10000 rows",2766.6,14910.8,12144.2,538.96],["Table20Columns: Insert 50000 rows",7449.3,77364.8,69915.5,1038.55],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",581.7,12879.1,12297.4,2214.05],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",1106.2,6250.7,5144.5,565.06],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",71.1,8.9,-62.2,12.52]]},
+     // Mitya -Safari
+     {"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,127],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,46],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,66],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,1],["Table5Columns: Insert 10000 rows",-1,1195],["Table5Columns: Insert 50000 rows",-1,7514],["Table10Columns: Insert 1000 rows",-1,204],["Table10Columns: Insert 10000 rows",-1,1829],["Table10Columns: Insert 50000 rows",-1,10355],["Table15Columns: Insert 1000 rows",-1,232],["Table15Columns: Insert 10000 rows",-1,2219],["Table15Columns: Insert 50000 rows",-1,11976],["Table20Columns: Insert 1000 rows",-1,247],["Table20Columns: Insert 10000 rows",-1,2349],["Table20Columns: Insert 50000 rows",-1,17027],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,2650],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,4332],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,2]]},
+     // Robin - Safari
+     {"agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",-1,39],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",-1,26],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",-1,28],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",-1,1],["Table5Columns: Insert 10000 rows",-1,295],["Table5Columns: Insert 50000 rows",-1,1513],["Table10Columns: Insert 1000 rows",-1,50],["Table10Columns: Insert 10000 rows",-1,313],["Table10Columns: Insert 50000 rows",-1,1568],["Table15Columns: Insert 1000 rows",-1,44],["Table15Columns: Insert 10000 rows",-1,323],["Table15Columns: Insert 50000 rows",-1,1610],["Table20Columns: Insert 1000 rows",-1,48],["Table20Columns: Insert 10000 rows",-1,375],["Table20Columns: Insert 50000 rows",-1,1958],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",-1,1003],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",-1,1141],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",-1,1]]},
+     // Edge 84 - Ekrem
+     {"agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4130.0 Safari/537.36 Edg/84.0.502.0","results":[["Test Case","WebSQL (ms)","IndexedDB (ms)","Diff (ms)","Percentage"],["Table5Columns: Insert 1000 rows",30.32,280.88,250.56,926.39],["Table5Columns: Query with filters [[\"col0\",\"Green\"]]",3.99,17.77,13.78,445.36],["Table5Columns: Query with filters [[\"col2\",\"Red\"],[\"col4\",\"Blue\"]]",5.12,59.5,54.38,1162.11],["Table5Columns: Query with filters [[\"guid\",\"500\"]]",4.42,1.98,-2.44,44.8],["Table5Columns: Insert 10000 rows",170.48,2779.19,2608.71,1630.21],["Table5Columns: Insert 50000 rows",860.55,14579.34,13718.79,1694.19],["Table10Columns: Insert 1000 rows",48.49,964.34,915.85,1988.74],["Table10Columns: Insert 10000 rows",284.32,3979.07,3694.75,1399.5],["Table10Columns: Insert 50000 rows",1311.6,18358.88,17047.28,1399.73],["Table15Columns: Insert 1000 rows",76.82,2408.68,2331.86,3135.49],["Table15Columns: Insert 10000 rows",377.24,4419.44,4042.2,1171.52],["Table15Columns: Insert 50000 rows",1650.86,21605.91,19955.05,1308.77],["Table20Columns: Insert 1000 rows",77.32,2466.53,2389.21,3190.03],["Table20Columns: Insert 10000 rows",674.14,7741.25,7067.11,1148.31],["Table20Columns: Insert 50000 rows",1992.03,25585.82,23593.79,1284.41],["Table20Columns: Query with filters [[\"col0\",\"Green\"]]",188.34,995.55,807.21,528.59],["Table20Columns: Query with filters [[\"col2\",\"Red\"],[\"col6\",\"Blue\"]]",340.38,3779.65,3439.27,1110.42],["Table20Columns: Query with filters [[\"guid\",\"25000\"]]",18.17,12.99,-5.18,71.49]]}
 ];
 
 const combinedResults = runs.map(run => {
@@ -35,7 +48,12 @@ const aggregatedResults = [["Test name"].concat(...browsers.map(b => ([b + "WebS
     .concat(combinedResults.reduce((agg, resultRow) => {
         let testRow = agg.find(row => row[0] === resultRow[1]);
         if (testRow === undefined) {
-            testRow = [resultRow[1]].concat(...Array.from({ length: browsers.length * 2 }).fill({cnt: 0, avg: 0}));
+            testRow = [resultRow[1]];
+            
+            for(let i = 0; i < browsers.length * 2; i++) {
+                testRow.push([]);
+            }
+
             agg.push(testRow);
         }
 
@@ -51,24 +69,41 @@ const aggregatedResults = [["Test name"].concat(...browsers.map(b => ([b + "WebS
             const browserIndex = browsers.indexOf(resultRow[0]);
             const i = browserIndex * 2 + (db === "WebSQL" ? 1 : 2);
 
-            testRow[i] = {
-                avg: roundToTwo((testRow[i].avg * testRow[i].cnt + value) / (testRow[i].cnt + 1)),
-                cnt: testRow[i].cnt + 1,
-            };
+            testRow[i].push(value);
         }
 }, []));
 
+// Sum
+console.table(report(aggregatedResults, vals => vals.reduce((total, value) => total + value, 0)));
 
-console.table(aggregatedResults);
+// Avg
+console.table(report(aggregatedResults, vals => vals.length > 0 ? vals.reduce((total, value) => total + value, 0) / vals.length : 0));
 
+// Sample count
+console.table(report(aggregatedResults, vals => vals.length));
+
+function report(table, calc) {
+    return table.map(row => {
+        return [...row.map(values => Array.isArray(values) ? roundToTwo(calc(values)) : values)];
+    })
+}
 
 function getBrowser(agent) {
+
+    if (agent.match(/Edg/) != null) {
+        return "Edge (Chrome based)";
+    }
+
     if (agent.match(/Firefox/) != null) {
         return "Firefox";
     }
 
     if (agent.match(/Chrome/) != null) {
         return "Chrome";
+    }
+
+    if (agent.match(/Safari/) != null) {
+        return "Safari";
     }
 
     return "Other"
