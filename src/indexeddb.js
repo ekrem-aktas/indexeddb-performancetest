@@ -5,6 +5,7 @@ export function isIndexedDBSupported() {
 }
 
 let db = undefined;
+let version = 1;
 
 export async function runTestWithIndexedDB(testCase) {
     if (db === undefined) {
@@ -16,10 +17,13 @@ export async function runTestWithIndexedDB(testCase) {
 
     switch (testCase.type) {
         case "table": {
-            db = new Dexie(getRandomDBName());
-            db.version(1).stores({
+            version++;
+            db.close();
+            // db = new Dexie(getRandomDBName());
+            db.version(version).stores({
                 [testCase.name]: "++id, " + testCase.columns.join(", ")
             });
+            await db.open();
             break;
         }
         case "insert": {
