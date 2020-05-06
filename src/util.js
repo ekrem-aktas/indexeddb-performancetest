@@ -8,13 +8,20 @@ export function measure(asyncFunc) {
 }
 
 export function report(engine, testCase, time, result) {
+    
+    let text = '';
     switch (testCase.type) {
         case "insert":
-            console.log(`${engine.toUpperCase()}: ${testCase.table}: insert ${testCase.data.length} rows. Time ${time}`);
+            text = `${engine.toUpperCase()}: ${testCase.table}: insert ${testCase.data.length} rows. Time ${time}`;
             break;
         case "query":
-            console.log(`${engine.toUpperCase()}: ${testCase.table}: query returning ${result} rows with filter ${JSON.stringify(testCase.filter)} Time ${time}`);
+            text = `${engine.toUpperCase()}: ${testCase.table}: query returning ${result} rows with filter ${JSON.stringify(testCase.filter)} Time ${time}`
             break;
+    }
+
+    if (text !== '') {
+        document.getElementById("result").innerText = text;
+        console.log(text);
     }
 }
 
