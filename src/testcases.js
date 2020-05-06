@@ -17,13 +17,13 @@ function * generateTestsFor(columnNumber) {
     yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
     yield cleanTable(tableName);
     // 50K
-    // yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
-    // if (columnNumber === 20) {
-    //     yield query(tableName, [["col0", VALUES[0]]]);
-    //     yield query(tableName, [["col2", VALUES[1]], ["col6", VALUES[2]]]);
-    //     yield query(tableName, [["guid", "25000"]]);
-    // }
-    // yield cleanTable(tableName);
+    yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
+    if (columnNumber === 20) {
+        yield query(tableName, [["col0", VALUES[0]]]);
+        yield query(tableName, [["col2", VALUES[1]], ["col6", VALUES[2]]]);
+        yield query(tableName, [["guid", "25000"]]);
+    }
+    yield cleanTable(tableName);
 }
 
 export function * getTestCases() {
