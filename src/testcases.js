@@ -12,18 +12,20 @@ function * generateTestsFor(columnNumber) {
         yield query(tableName, [["col2", VALUES[1]], ["col4", VALUES[2]]]);
         yield query(tableName, [["guid", "500"]]);
     }
-    yield cleanTable(tableName);
+    yield cleanTable(tableName);    
+
     // 10K
     yield insert(tableName, generateObjects(10000, createObj(columnNumber)));
-    yield cleanTable(tableName);
-    // 50K
-    yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
     if (columnNumber === 20) {
         yield query(tableName, [["col0", VALUES[0]]]);
         yield query(tableName, [["col2", VALUES[1]], ["col6", VALUES[2]]]);
         yield query(tableName, [["guid", "25000"]]);
     }
     yield cleanTable(tableName);
+
+    // 50K
+    // yield insert(tableName, generateObjects(50000, createObj(columnNumber)));
+    // yield cleanTable(tableName);
 }
 
 export function * getTestCases() {
@@ -35,6 +37,7 @@ export function * getTestCases() {
         yield testCase;
     for (const testCase of generateTestsFor(20))
         yield testCase;
+
 }
 
 function createObj(cols) {

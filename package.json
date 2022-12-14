@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server",
+    "start": "http-server --mimetypes custom.mime.types",
     "package": "webpack --config webpack.config.js"
   },
   "author": "",
@@ -15,7 +15,7 @@
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "babel-loader": "^8.1.0",
-    "http-server": "^0.12.1"
+    "http-server": "^14.1.1"
   },
   "dependencies": {
     "webpack": "^4.43.0",

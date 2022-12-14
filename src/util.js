@@ -7,6 +7,14 @@ export function measure(asyncFunc) {
     };
 }
 
+export function measureSync(syncFunc) {
+    return (...args) => {
+        const start = performance.now();
+        const result = syncFunc(...args);
+        return { result, time: performance.now() - start };
+    };
+}
+
 export function report(engine, testCase, time, result) {
     
     let text = '';
